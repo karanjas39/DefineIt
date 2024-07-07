@@ -11,22 +11,29 @@ import { useState } from "react";
 
 type ProviderContextType = {
   searchedWord: string;
-  handleSearch: (s: string) => void;
   setSearchedWord: Dispatch<SetStateAction<string>>;
+  favWords: FavWordsType[];
+  setFavWords: Dispatch<SetStateAction<FavWordsType[]>>;
+};
+
+type FavWordsType = {
+  word: string;
+  audio: string;
+  source: string;
 };
 
 const SearchContext = createContext<ProviderContextType | null>(null);
 
 export function SearchProvider({ children }: { children: ReactNode }) {
   const [searchedWord, setSearchedWord] = useState<string>("");
-
-  function handleSearch(s: string) {
-    setSearchedWord(s);
-  }
+  const [favWords, setFavWords] = useState<FavWordsType[]>(() => {
+    const storedGoals = localStorage.getItem("favWords");
+    return storedGoals ? JSON.parse(storedGoals) : [];
+  });
 
   return (
     <SearchContext.Provider
-      value={{ searchedWord, setSearchedWord, handleSearch }}
+      value={{ searchedWord, setSearchedWord, favWords, setFavWords }}
     >
       {children}
     </SearchContext.Provider>

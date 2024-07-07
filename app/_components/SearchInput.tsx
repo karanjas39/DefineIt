@@ -4,15 +4,10 @@ import { useSearch } from "@/app/_contexts/searchContext";
 import { FormEvent } from "react";
 
 function SearchInput() {
-  const { searchedWord, handleSearch, setSearchedWord } = useSearch();
-
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    handleSearch(searchedWord);
-  }
+  const { searchedWord, setSearchedWord } = useSearch();
 
   return (
-    <form className="w-[60%] mx-auto" onSubmit={handleSubmit}>
+    <div className="w-[60%] mx-auto">
       <input
         type="text"
         placeholder="Search any word.."
@@ -20,7 +15,7 @@ function SearchInput() {
         value={searchedWord}
         onChange={(e) => setSearchedWord(e.target.value)}
       />
-    </form>
+    </div>
   );
 }
 

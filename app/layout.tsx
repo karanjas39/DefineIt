@@ -6,7 +6,7 @@ import ThemeProvider from "@/app/_components/ThemeProvider";
 import NavBar from "@/app/_components/NavBar";
 import { SearchProvider } from "./_contexts/searchContext";
 
-const poppins = Poppins({
+const font = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className} dark:bg-neutral-800 dark:text-neutral-200 bg-neutral-200 text-neutral-800`}
+        className={`${font.className} dark:bg-neutral-900 dark:text-neutral-300 bg-neutral-300 text-neutral-900`}
       >
         <ThemeProvider>
           <NavBar />

@@ -8,7 +8,7 @@ export default function NavBar() {
     <div className="flex justify-between px-5 py-2">
       <Link href="/" className="flex items-center gap-2">
         <Image src={Logo} alt="Website Logo" width={30} />
-        <h1 className="text-2xl font-bold dark:text-red-700 text-red-800">
+        <h1 className="text-3xl font-bold dark:text-red-700 text-red-800">
           DefineIt
         </h1>
       </Link>
