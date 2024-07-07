@@ -16,9 +16,9 @@ type ProviderContextType = {
   setFavWords: Dispatch<SetStateAction<FavWordsType[]>>;
 };
 
-type FavWordsType = {
+export type FavWordsType = {
   word: string;
-  audio: string;
+  audio?: string;
   source: string;
 };
 
@@ -27,8 +27,8 @@ const SearchContext = createContext<ProviderContextType | null>(null);
 export function SearchProvider({ children }: { children: ReactNode }) {
   const [searchedWord, setSearchedWord] = useState<string>("");
   const [favWords, setFavWords] = useState<FavWordsType[]>(() => {
-    const storedGoals = localStorage.getItem("favWords");
-    return storedGoals ? JSON.parse(storedGoals) : [];
+    const favWords = localStorage.getItem("favWords");
+    return favWords ? JSON.parse(favWords) : [];
   });
 
   return (

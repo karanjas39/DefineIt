@@ -75,7 +75,13 @@ export default function SearchResult() {
             {result.phonetics?.audio ? (
               <AudioPlayer src={result.phonetics.audio} />
             ) : null}
-            <BookmarkWord />
+            <BookmarkWord
+              favWord={{
+                word: result.word,
+                source: result.sourceUrls[0],
+                audio: result.phonetics?.audio ? result.phonetics?.audio : "",
+              }}
+            />
           </div>
         </div>
         {result.phonetics?.text ? (
