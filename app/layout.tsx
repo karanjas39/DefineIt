@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/app/_components/ThemeProvider";
+import NavBar from "@/app/_components/NavBar";
+import { SearchProvider } from "./_contexts/searchContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +27,10 @@ export default function RootLayout({
       <body
         className={`${poppins.className} dark:bg-neutral-800 dark:text-neutral-200 bg-neutral-200 text-neutral-800`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <NavBar />
+          <SearchProvider>{children}</SearchProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

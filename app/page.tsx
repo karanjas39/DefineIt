@@ -1,9 +1,11 @@
-import NavBar from "@/app/_components/NavBar";
+import SearchInput from "@/app/_components/SearchInput";
+import SearchResult from "./_components/SearchResult";
 
 async function page() {
   return (
-    <section>
-      <NavBar />
+    <section className="flex <items-center flex-col">
+      <SearchInput />
+      <SearchResult />
     </section>
   );
 }
