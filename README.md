@@ -1,6 +1,5 @@
-# DefineIt
+# DefineIt [https://defineit.vercel.app/](https://defineit.vercel.app/)
 
-[DefineIt](https://defineit.vercel.app/).
 DefineIt is a dictionary web application built using Next.js, TypeScript, and Tailwind CSS. The app allows users to search for word definitions, phonetics, and usage examples. It uses the free [Dictionary API](https://dictionaryapi.dev/) to fetch the word data.
 
 ## Features
