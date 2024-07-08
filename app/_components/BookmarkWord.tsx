@@ -5,8 +5,13 @@ export default function BookmarkWord({ favWord }: { favWord: FavWordsType }) {
   const { setFavWords, favWords } = useSearch();
 
   function handleAddBookMark() {
-    setFavWords((prev) => [...prev, favWord]);
-    localStorage.setItem("favWords", JSON.stringify([...favWords, favWord]));
+    const isWordExist = favWords.find((word) => word.word === favWord.word);
+    if (isWordExist) {
+      alert("Word is already in your favourite list.");
+      return;
+    }
+    setFavWords((prev) => [favWord, ...prev]);
+    localStorage.setItem("favWords", JSON.stringify([favWord, ...favWords]));
     alert("Word is added to favourite list.");
   }
 

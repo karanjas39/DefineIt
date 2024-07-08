@@ -14,7 +14,7 @@ function AudioPlayer({ src }: { src: string }) {
     <div>
       <audio ref={audioRef} src={src} />
       <button onClick={playAudio}>
-        <FaPlayCircle className="text-3xl" />
+        <FaPlayCircle className="sm:text-3xl text-2xl" />
       </button>
     </div>
   );

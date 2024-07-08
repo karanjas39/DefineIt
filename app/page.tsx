@@ -3,7 +3,7 @@ import SearchResult from "./_components/SearchResult";
 
 async function page() {
   return (
-    <section className="flex <items-center flex-col">
+    <section className="flex items-center flex-col">
       <SearchInput />
       <SearchResult />
     </section>

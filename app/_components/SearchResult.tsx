@@ -68,7 +68,7 @@ export default function SearchResult() {
 
   if (searchedWord && result) {
     return (
-      <div className="flex flex-col gap-2 w-[50%] mx-auto my-6">
+      <div className="flex flex-col gap-2 sm:w-[50%] w-[80%] mx-auto my-6">
         <div className="flex items-center justify-between">
           <h2 className="text-5xl">{searchedWord.toLowerCase()}</h2>
           <div className="flex items-start gap-4">
@@ -77,7 +77,7 @@ export default function SearchResult() {
             ) : null}
             <BookmarkWord
               favWord={{
-                word: result.word,
+                word: result.word.toLowerCase(),
                 source: result.sourceUrls[0],
                 audio: result.phonetics?.audio ? result.phonetics?.audio : "",
               }}
